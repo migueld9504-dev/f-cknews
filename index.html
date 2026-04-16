@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F*CKS NEWS NOTICREO — Plataforma Oficial</title>
+  <meta name="description"
+    content="La plataforma oficial de F*cks News Noticreo. Vota por la Batalla de Titulares, envía la noticia que quieres que cubramos y mucho más." />
+  <meta property="og:title" content="F*CKS NEWS NOTICREO" />
+  <meta property="og:description" content="Vota en la Batalla de Titulares y envíanos tu noticia." />
+  <meta property="og:image" content="assets/banner.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       SPLASH SCREEN — Animación Intro del Logo
+  ══════════════════════════════════════════════ -->
+  <div id="splash">
+    <div id="flash-overlay"></div>
+    <img src="assets/logo_oficial.png" alt="F*cks News Noticreo" id="splash-logo-img" />
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       MAIN APP
+  ══════════════════════════════════════════════ -->
+  <div id="app">
+
+    <!-- ─── NAVBAR ─────────────────────────────── -->
+    <nav id="navbar">
+      <a class="nav-logo" href="#hero">
+        <img src="assets/logo_oficial.png" alt="F*cks News Logo" class="nav-logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#batalla" data-target="batalla">⚔️ Batalla</a></li>
+        <li><a href="#noticias" data-target="noticias">📰 Envía Noticia</a></li>
+        <li><a href="#coming-soon" class="coming-soon">🎟️ Eventos</a></li>
+        <li><a href="#coming-soon" class="coming-soon">🛒 Tienda</a></li>
+        <li><a href="https://fucksnews.com.co" target="_blank" class="btn-primary"
+            style="font-size:12px;padding:8px 16px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">Sitio
+            Oficial ↗</a></li>
+      </ul>
+    </nav>
+
+    <!-- ─── HERO ────────────────────────────────── -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-eyebrow">Noticiero de Comedia Colombia</div>
+          <h1 class="hero-title">
+            F*CKS
+            <span>NEWS</span>
+          </h1>
+          <div class="hero-badge">NOTICREO</div>
+          <p class="hero-desc">
+            El noticiero más irresponsablemente honesto de Colombia.<br />
+            Vota por la mejor batalla de titulares y mantén a El Mago y Sánchez informados de lo que necesita la gente.
+          </p>
+          <div class="hero-ctas">
+            <a href="#batalla" class="btn-primary">
+              <span>⚔️</span> Batalla de Titulares
+            </a>
+            <a href="#noticias" class="btn-secondary">
+              <span>📰</span> Envía tu Noticia
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/banner.png" alt="El Mago y Sánchez en el set de F*cks News Noticreo" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── BATALLA DE TITULARES ─────────────────── -->
+    <section id="batalla">
+      <div class="section">
+
+        <div class="section-header">
+          <div class="section-eyebrow">🔴 EN VIVO</div>
+          <h2 class="section-title">Batalla de<br />Titulares</h2>
+          <p class="section-subtitle">
+            Vota por el titular más devastador del episodio.<br />
+            Solo un puede ganar. <strong style="color:#fff">¿A quién le vas?</strong>
+          </p>
+        </div>
+
+        <!-- Episode Banner -->
+        <div class="episode-banner">
+          <div class="episode-tag">
+            <div class="episode-number" id="ep-number">EP. 201</div>
+            <div class="episode-info">
+              <span class="episode-label">Episodio Actual</span>
+              <span class="episode-date" id="ep-date">Abril 2026</span>
+            </div>
+          </div>
+          <div class="episode-status">
+            <div class="status-dot"></div>
+            <span>Votación Abierta</span>
+          </div>
+        </div>
+
+        <!-- Battle Arena -->
+        <div class="battle-arena">
+
+          <!-- EL MAGO -->
+          <div class="contender-card mago" id="card-mago">
+            <div class="winner-badge" id="badge-mago" style="display:none;">🏆 GANANDO</div>
+            <img class="contender-avatar" src="assets/mago.png" alt="El Mago — F*cks News" id="mago-avatar" />
+            <div class="contender-name">El Mago</div>
+            <div class="vote-pct" id="mago-pct">55%</div>
+            <blockquote class="contender-titular" id="mago-titular">
+              "Gobierno anuncia que el hambre es solo una percepción mental y recomienda meditación"
+            </blockquote>
+            <div class="vote-count" id="mago-count">247 votos</div>
+            <button class="vote-btn vote-btn-mago" id="btn-mago" onclick="vote('mago')" aria-label="Votar por El Mago">
+              ⚡ VOTAR POR EL MAGO
+            </button>
+          </div>
+
+          <!-- VS -->
+          <div class="vs-divider">
+            <div class="vs-bolt">⚡</div>
+            <div class="vs-text">VS</div>
+            <div class="vs-bolt">⚡</div>
+          </div>
+
+          <!-- SÁNCHEZ -->
+          <div class="contender-card sanchez" id="card-sanchez">
+            <div class="winner-badge" id="badge-sanchez" style="display:none;">🏆 GANANDO</div>
+            <img class="contender-avatar" src="assets/sanchez.png" alt="Sánchez — F*cks News" id="sanchez-avatar" />
+            <div class="contender-name">Sánchez</div>
+            <div class="vote-pct" id="sanchez-pct">45%</div>
+            <blockquote class="contender-titular" id="sanchez-titular">
+              "Nuevo estudio revela que trabajar es completamente opcional si tienes suficiente fe"
+            </blockquote>
+            <div class="vote-count" id="sanchez-count">198 votos</div>
+            <button class="vote-btn vote-btn-sanchez" id="btn-sanchez" onclick="vote('sanchez')"
+              aria-label="Votar por Sánchez">
+              ⚡ VOTAR POR SÁNCHEZ
+            </button>
+          </div>
+
+        </div>
+        <!-- /battle-arena -->
+
+        <!-- Results Bar -->
+        <div class="results-container">
+          <div class="results-header">
+            <span class="results-title">📊 Resultados en Tiempo Real</span>
+            <span class="total-votes" id="total-votes">445 votos totales</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-mago" id="bar-mago" style="width:55%"></div>
+            <div class="progress-sanchez" id="bar-sanchez" style="width:45%"></div>
+          </div>
+          <div class="results-labels">
+            <div class="result-label">
+              <div class="result-dot" style="background:#CC0000"></div>
+              <span style="color:#ff4444;font-weight:700;">El Mago</span>
+            </div>
+            <div class="result-label">
+              <div class="result-dot" style="background:#003399"></div>
+              <span style="color:#0055ff;font-weight:700;">Sánchez</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-section">
+          <div class="qr-image-wrap">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://fucksnews.com.co/%23batalla&color=CC0000&bgcolor=ffffff&qzone=2&format=png"
+              alt="QR Code para votar en la Batalla de Titulares" width="150" height="150" />
+          </div>
+          <div class="qr-text">
+            <div class="qr-label">📱 Comparte la batalla</div>
+            <div class="qr-headline">Escanea y<br />Vota Ahora</div>
+            <p class="qr-desc">
+              Proyecta este QR durante el show para que todos en el público voten en tiempo real desde sus celulares. La
+              pantalla se actualiza al instante.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /batalla -->
+
+    <!-- ─── ENVÍA TU NOTICIA ──────────────────────── -->
+    <section id="noticias">
+      <div class="section">
+
+        <div class="noticia-layout">
+
+          <!-- Left: Info -->
+          <div class="noticia-info">
+            <div class="section-eyebrow">📰 Participa</div>
+            <h2 class="section-title" style="text-align:left;">Envía tu<br />Noticia</h2>
+            <p class="section-subtitle" style="text-align:left;margin:0 0 40px;">
+              ¿Viste algo ridículo en las noticias? ¿Algo que merece el tratamiento F*CKS NEWS? Mándanos la historia y la valoramos para el próximo episodio.
+            </p>
+
+            <div class="noticia-steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <h4>Llena el formulario</h4>
+                  <p>Dinos tu nombre, ciudad y cuéntanos la noticia que tienes ganas de que cubramos.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <h4>El equipo la revisa</h4>
+                  <p>El Mago y Sánchez leen todas las noticias y seleccionan las más buenas —o las peores, según el caso.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <h4>¡Apareces en el show!</h4>
+                  <p>Si tu noticia es seleccionada, te mencionamos en el próximo episodio. Fama nacional garantizada (o cuestionada).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="noticia-visual">
+            <div class="noticia-form">
+              <div class="form-title">📝 Tu Noticia</div>
+
+              <!-- Success state -->
+              <div class="form-success" id="form-success">
+                <div class="success-icon">🎉</div>
+                <div class="success-title">¡Noticia Recibida!</div>
+                <p class="success-text">
+                  El equipo de F*cks News la revisará. Si la seleccionamos, tu nombre estará en el próximo episodio.
+                </p>
+                <button class="btn-primary" style="margin-top:12px;border:none;cursor:pointer;"
+                  onclick="document.getElementById('form-success').classList.remove('show'); document.getElementById('noticia-form').style.display='block'; document.getElementById('noticia-form').reset();">
+                  Enviar otra noticia
+                </button>
+              </div>
+
+              <!-- Form -->
+              <form id="noticia-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="nombre">Tu Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="ej. Andrés Gómez" required
+                      autocomplete="name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="ciudad">Tu Ciudad</label>
+                    <input type="text" id="ciudad" name="ciudad" placeholder="ej. Bogotá, Medellín..." required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="categoria">Categoría</label>
+                  <select id="categoria" name="categoria" required>
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                    <option value="politica">🏛️ Política</option>
+                    <option value="entretenimiento">🎭 Entretenimiento</option>
+                    <option value="internacional">🌎 Internacional</option>
+                    <option value="deportes">⚽ Deportes</option>
+                    <option value="farandula">💃 Farándula</option>
+                    <option value="economia">💰 Economía</option>
+                    <option value="otro">🤷 Otro</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="titular">Titular de la Noticia</label>
+                  <input type="text" id="titular" name="titular"
+                    placeholder="El titular más ridículo / impactante de la noticia" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="detalle">Cuéntanos más</label>
+                  <textarea id="detalle" name="detalle"
+                    placeholder="Danos el contexto completo. ¿Qué pasó? ¿Por qué es ridículo / interesante? ¿Dónde lo viste?" required rows="5"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="fuente">Link o Fuente (opcional)</label>
+                  <input type="url" id="fuente" name="fuente" placeholder="https://... (artículo, tweet, video...)" />
+                </div>
+
+                <div class="form-group">
+                  <label for="instagram">Tu Instagram (opcional)</label>
+                  <input type="text" id="instagram" name="instagram"
+                    placeholder="@tunombre — para mencionarte si la usamos" />
+                </div>
+
+                <button type="submit" class="form-submit" id="form-submit-btn">
+                  📢 ENVIAR NOTICIA AL EQUIPO
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /noticias -->
+
+    <!-- ─── COMING SOON MODULES ──────────────────── -->
+    <section id="coming-soon">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-eyebrow">Próximamente</div>
+          <h2 class="section-title">Más F*CKS<br />News</h2>
+          <p class="section-subtitle">
+            La plataforma está creciendo. Pronto tendrás acceso a todo el universo F*cks News desde aquí.
+          </p>
+        </div>
+
+        <div class="modules-grid">
+          <div class="module-card">
+            <span class="module-soon">PRONTO</span>
+            <span class="module-icon">🎟️</span>
+            <h3>Eventos y Preventas</h3>
+            <p>Entérate de los próximos shows antes que nadie. Accede a preventa exclusiva y boletos preferenciales
+              directamente aquí.</p>
+          </div>
+          <div class="module-card">
+            <span class="module-soon">PRONTO</span>
+            <span class="module-icon">🛒</span>
+            <h3>Tienda Oficial</h3>
+            <p>Camisetas, gorras, el juego de mesa y más merch oficial de F*cks News. Todo en un solo lugar, sin
+              intermediarios.</p>
+          </div>
+          <div class="module-card">
+            <span class="module-soon">PRONTO</span>
+            <span class="module-icon">🎬</span>
+            <h3>Hub de Contenido</h3>
+            <p>Todos los episodios, clips virales, y los mejores titulares de la historia del programa. Tu archivo
+              definitivo de F*cks News.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FOOTER ───────────────────────────────── -->
+    <footer>
+      <div class="footer-brand">
+        <img src="assets/logo_oficial.png" alt="F*cks News Logo" style="height:70px;width:auto;margin-bottom:8px;" />
+        <span class="footer-sub">Noticreo — El noticiero de comedia</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#batalla">Batalla de Titulares</a></li>
+        <li><a href="#noticias">Envía tu Noticia</a></li>
+        <li><a href="https://fucksnews.com.co" target="_blank">Sitio Oficial</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/@FcksNews" target="_blank" class="social-btn" aria-label="YouTube"
+          title="YouTube">
+          <img src="assets/youtube.png" alt="YouTube" />
+        </a>
+        <a href="https://www.instagram.com/fucksnewsnoticreo/" target="_blank" class="social-btn" aria-label="Instagram"
+          title="Instagram">
+          <img src="assets/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://www.threads.com/@fucksnewsnoticreo" target="_blank" class="social-btn" aria-label="Threads"
+          title="Threads">
+          <img src="assets/threads.png" alt="Threads" />
+        </a>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /app -->
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Confetti canvas -->
+  <canvas id="confetti"></canvas>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
